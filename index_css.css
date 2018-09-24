@@ -139,3 +139,35 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+.stock_table {
+	position: absolute;
+	left: 0px;
+	padding-left: 50px;
+	padding-top: 50px;
+}
+
+.stock_graph {
+	position: absolute;
+	right: 50px;
+	padding-top: 50px;
+}
+
+.stock_options {
+	position: absolute;
+	right: 260px;
+	padding-top: 350px;
+}
+
+.stock_options_button {
+	background-color: green;
+	color: white;
+	font-size: 30px;
+	border: none;
+}
+
+.stock_details {
+	position: absolute;
+	right: 55px;
+	padding-top: 500px;
+}
