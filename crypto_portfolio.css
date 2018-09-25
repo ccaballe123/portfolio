@@ -138,44 +138,7 @@ a{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-}
 
-.search_bar {
-	padding-top: 50px;
-}
-
-.search_bar input {
-	font-size: 24px;
-	width: 97%;
-}
-
-.search_container {
-	padding-top: 50px;
-	overflow: hidden;
-}
-
-.search_results {
-	display:inline-block;
-	float: left;
-}
-
-.search_buttons {
-	padding-top: 90px;
-	overflow: hidden;
-}
-
-.search_buttons button {
-	font-family: 'Courier';
-	font-weight:bold;
-	background-color: green;
-	font-size: 20px;
-	height: 85px;
-	width: 85px;
-}
-
-
-.search_results img {
-	width: 1300px;
 }
 .trends_head {
 	text-align: center;
@@ -238,4 +201,33 @@ table, th, td {
 	padding-bottom: 25px;
 	background-color: #686868;
 	clear: left;
+}
+
+.crypto_table {
+	float: left;
+	padding-top: 50px;
+}
+
+.crypto_graph {
+	position: absolute;
+	right: 150px;
+	padding-top: 50px;
+}
+
+.crypto_options {
+	position: absolute;
+	right: 260px;
+	padding-top: 350px;
+}
+
+.crypto_options_button {
+	color: white;
+	font-size: 30px;
+	border: none;
+}
+
+.crypto_details {
+	position: absolute;
+	right: 55px;
+	padding-top: 500px;
 }
