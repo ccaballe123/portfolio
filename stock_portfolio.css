@@ -204,9 +204,7 @@ table, th, td {
 }
 
 .stock_table {
-	position: absolute;
-	left: 0px;
-	padding-left: 50px;
+	float: left;
 	padding-top: 50px;
 }
 
