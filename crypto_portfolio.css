@@ -203,30 +203,30 @@ table, th, td {
 	clear: left;
 }
 
-.stock_table {
+.crypto_table {
 	float: left;
 	padding-top: 50px;
 }
 
-.stock_graph {
+.crypto_graph {
 	position: absolute;
-	right: 50px;
+	right: 150px;
 	padding-top: 50px;
 }
 
-.stock_options {
+.crypto_options {
 	position: absolute;
 	right: 260px;
 	padding-top: 350px;
 }
 
-.stock_options_button {
+.crypto_options_button {
 	color: white;
 	font-size: 30px;
 	border: none;
 }
 
-.stock_details {
+.crypto_details {
 	position: absolute;
 	right: 55px;
 	padding-top: 500px;
