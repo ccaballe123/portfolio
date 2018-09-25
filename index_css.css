@@ -138,7 +138,6 @@ a{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-
 }
 
 .search_bar {
@@ -177,6 +176,9 @@ table, th, td {
 
 .search_results img {
 	width: 1300px;
+<<<<<<< HEAD
+}
+=======
 }
 
 
