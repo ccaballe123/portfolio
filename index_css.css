@@ -139,3 +139,41 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+.search_bar {
+	padding-top: 50px;
+}
+
+.search_bar input {
+	font-size: 24px;
+	width: 97%;
+}
+
+.search_container {
+	padding-top: 50px;
+	overflow: hidden;
+}
+
+.search_results {
+	display:inline-block;
+	float: left;
+}
+
+.search_buttons {
+	padding-top: 90px;
+	overflow: hidden;
+}
+
+.search_buttons button {
+	font-family: 'Courier';
+	font-weight:bold;
+	background-color: green;
+	font-size: 20px;
+	height: 85px;
+	width: 85px;
+}
+
+
+.search_results img {
+	width: 1300px;
+}
