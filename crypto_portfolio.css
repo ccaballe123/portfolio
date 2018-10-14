@@ -203,7 +203,7 @@ table, th, td {
 	clear: left;
 }
 
-.crypto_table {
+#crypto_table {
 	float: left;
 	padding-top: 50px;
 }
