@@ -7,8 +7,21 @@
 <title>Portfol.io</title>
 <link href = "login_css.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-
 </style>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB9DyCvFAAD-DSsp-2f5anQpDT5yRYNScs",
+    authDomain: "portfolio-f3fa1.firebaseapp.com",
+    databaseURL: "https://portfolio-f3fa1.firebaseio.com",
+    projectId: "portfolio-f3fa1",
+    storageBucket: "",
+    messagingSenderId: "22357867332"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="login.js"></script>
 </head>
 
 <body>
@@ -16,22 +29,18 @@
 	<header>
 	  <div class= "top_header">
 	  	<h1 class ="main_title"> Portfol.io</h1>
-	  	<h2 class ="main_title">Stock and Cryptocurrency Trader</h2>
+	  	<h2 class ="under_title">Stock and Cryptocurrency Trader</h2>
 	  </div>
 	  <div class="login_container">
 		<div class="user_input">
-			<form class="login">
-				<input type ="text" name="username" placeholder="username">
-				<input type ="password" name="password" placeholder="password">
-				<button type="submit" formaction="index.html">Login</button>
-				<button type="submit" formaction="register.html">Register</button>
-			</form>
+			<input id="email" type ="text" name="email" placeholder="email">
+			<input id="pwd" type ="password" name="password" placeholder="password">
+			<button id="login_btn" onclick="login()">Login</button>
+			<button type="submit" formaction="register.html">Register</button>
 		</div>
 	  </div>
 	
   </header> 
-		
-	
 	
 </div>
 
