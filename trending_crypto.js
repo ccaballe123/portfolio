@@ -18,9 +18,9 @@ xml.onreadystatechange = function(){
       }
       
 
-      tableTxt += "</table>";
+      tableTxt += "</tbody></table>";
       document.getElementById("trending_crypto").innerHTML = tableTxt;
   
   }};
-
+//https://api.iextrading.com/1.0/stock/market/list/gainers
   xml.send(null);
