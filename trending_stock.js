@@ -1,5 +1,5 @@
 var xml = new XMLHttpRequest();
-xml.open ("GET","https://api.iextrading.com/1.0/stock/market/list/gainers", true);
+xml.open ("GET","https://api.iextrading.com/1.0/stock/market/list/gainers?displayPercent=true", true);
 
 var tableTxt = "";
 xml.onreadystatechange = function(){
@@ -11,8 +11,11 @@ xml.onreadystatechange = function(){
 			var cos = jsonObj[i].latestPrice;
 			var percent24h = jsonObj[i].changePercent
 			var yeartochange = jsonObj[i].ytdChange
+			var cos_ = cos.toFixed(5);
+			var percent24h_ = percent24h.toFixed(2);
+			var yeartochange_ = yeartochange.toFixed(2);
 
-			tableTxt += "<tr><td class=column1>" + sym +  "</td> <td class=column2>" + cos + "</td><td class=column3>" + percent24h + " %</td><td class=column6>" + yeartochange + " %</td></tr>";
+			tableTxt += "<tr><td class=column1>" + sym +  "</td> <td class=column2>" + cos_ + "</td><td class=column3>" + percent24h_ + " %</td><td class=column6>" + yeartochange_ + " %</td></tr>";
 
 		}
 		tableTxt += "</table>";
