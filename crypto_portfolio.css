@@ -203,9 +203,27 @@ table, th, td {
 	clear: left;
 }
 
-#crypto_table {
+#crypto_table_container {
 	float: left;
 	padding-top: 50px;
+}
+
+#crypto_table {
+
+}
+
+#crypto_table th {
+	font-weight: bold;
+	padding: 12px 30px;
+	background: #0052cc;
+	font-size: 20px;
+	color: white;
+}
+
+#crypto_table td {
+	text-align: center;
+	padding: 8px;
+	font-size: 18px;
 }
 
 .crypto_graph {
