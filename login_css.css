@@ -83,7 +83,7 @@
 
 .user_input button {
 	  font-family: "Segoe";
-	  text-transform: uppercase;
+	  /*text-transform: uppercase;*/
 	  outline: 0;
 	  background: #245AEC;
 	  width: 49%;
@@ -96,3 +96,28 @@
 #create {
 	width: 100%;
 }
+
+#initialize {
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+#google_btn {
+	margin-top: 5px;
+	width: 100%;
+	background: url("pics/googleplus.png");	
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-size: 50px auto;
+	background-color: #dd4b39;
+	border-style: outset;
+	border-width: 2px;
+}
+
+#error {
+	display: none;
+	color: red;
+	text-align: center;
+}
+
