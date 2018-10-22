@@ -16,7 +16,7 @@ xml1.onreadystatechange = function(){
 		var percent24h2 = percent24h1.toFixed(2);
 		var percent7d2 = percent7d1.toFixed(2);
 
-        tableTxt1 += "<tr><td class=column1>" + sym1 +  "</td> <td class=column2>" + cos2 + "</td><td class=column3>" + percent24h2 + " %</td><td class=column6>" + percent7d2 + " %</td></tr>";
+        tableTxt1 += "<tr><td class=column1>" + sym1 +  "</td> <td class=column2> $" + cos2 + "</td><td class=column3>" + percent24h2 + " %</td><td class=column6>" + percent7d2 + " %</td></tr>";
       }
       
 
