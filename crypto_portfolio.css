@@ -209,7 +209,26 @@ table, th, td {
 }
 
 #crypto_table {
+	border-spacing: 1;
+	background: white;
+	border-radius: 10px;
+	overflow: hidden;
+}
 
+#crypto_table tr {
+	font-size: 15px;
+	color: #808080;
+	line-height: 1.2;
+	font-weight: unset;
+}
+#crypto_table tr:nth-child(even) {
+	background-color: #f5f5f5;
+}
+
+#crypto_table tr:hover {
+	color: #555555;
+	background-color: #f5f5f5;
+	cursor: pointer;
 }
 
 #crypto_table th {
