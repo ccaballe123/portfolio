@@ -1,4 +1,4 @@
-describe('Register Tests', function() {
+describe('Login Tests', function() {
   beforeEach(function(){
     browser.waitForAngularEnabled(false);
     browser.get('https://portfolio-47669.firebaseapp.com/');
@@ -26,23 +26,28 @@ describe('Register Tests', function() {
     expect(errorResult).toBe(expected);
   }
 
-  it('Acceptance Test 1:', function() {
+  it('should check if the user is redirected to home page after successful login', function() {
     initializeValues("test@email.com", "testpassword");
     browser.sleep(1000);
     expect(browser.getCurrentUrl()).toBe('https://portfolio-47669.firebaseapp.com/home.html');
   });
 
-  it('Acceptance Test 2:', function() {
+  it('should check if the user exists', function() {
+    initializeValues("userDoesNotExist@email.com", "123456");
+    errorTest("There is no user record corresponding to this identifier. The user may have been deleted.");
+  });
+
+  it('should check if the user\'s password is correct', function() {
     initializeValues("test@email.com", "invalidPassword");
     errorTest("The password is invalid or the user does not have a password.");
   });
 
-  it('Acceptance Test 3:', function() {
+  it('should check if the user input a valid email address', function() {
     initializeValues("INVALID EMAIL", "testpassword");
     errorTest("The email address is badly formatted.");
   });
 
-  it('Acceptance Test 4 and 5:', function() {
+  it('should check if google login authentication works correctly', function() {
     googleLogin = element(by.id('google_btn'));
     googleLogin.click();
 
@@ -83,8 +88,5 @@ describe('Register Tests', function() {
     expect(browser.getCurrentUrl()).toBe('https://portfolio-47669.firebaseapp.com/home.html');
 
   });
-
-
-  
 
 });
