@@ -1,6 +1,8 @@
-node_module
+node_modules
 /firebase.json
 /firestore.indexes.json
 /database.rules.json
 /firestore.rules
 /.firebaserc
+.idea
+*.iml
