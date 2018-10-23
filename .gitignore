@@ -4,6 +4,7 @@ node_modules
 /database.rules.json
 /firestore.rules
 /.firebaserc
+.idea
+*.iml
 .git
 .idea
-

@@ -7,8 +7,28 @@
 <title>Portfol.io</title>
 <link href = "login_css.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-
 </style>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	firestore.settings(settings);
+  </script>
+<script type = text/javascript src="js/register.js">
+</script>
 </head>
 
 <body>
@@ -16,17 +36,17 @@
 	<header>
 	  <div class= "top_header">
 	  	<h1 class ="main_title"> Portfol.io</h1>
-	  	<h2 class ="main_title">Stock and Cryptocurrency Trader</h2>
+	  	<h2 class ="under_title">Stock and Cryptocurrency Trader</h2>
 	  </div>
 	  <div class="login_container">
 		<div class="user_input">
-			<form class="login">
-				<input type ="text" name="username" placeholder="username">
-				<input type ="password" name="password" placeholder="password">
-				<input type ="text" name="email" placeholder="email">
-				<button id="create" type="submit" formaction="index.html">Create</button>
-				<p style="text-align: center">Already have an account?<a href="login.html"> Sign in</a></p>
-			</form>
+			<input id="email" type ="text" name="email" placeholder="email">
+			<input id="pwd_one" type ="password" name="password_one" placeholder="password">
+			<input id="pwd_two" type ="password" name="password_two" placeholder="confirm password">
+			<input id="balance" type="number" min="0" name="balance" placeholder="Desired Balance" required>
+			<button id="create" onclick="register()">Create</button>
+			<p style="text-align: center">Already have an account?<a id="signin" href="index.html"> Sign in</a></p>
+			<div id="error"></div>
 		</div>
 	  </div>
 	
@@ -35,6 +55,5 @@
 	
 	
 </div>
-
 </body>
 </html>
