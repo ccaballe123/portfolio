@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name = "viewport" content="width=device-width, initial-scale=1">
+<title>Portfol.io</title>
+<link href = "login_css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+</style>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	firestore.settings(settings);
+  </script>
+<script type = text/javascript src="js/register.js">
+</script>
+</head>
+
+<body>
+<div class="container">
+	<header>
+	  <div class= "top_header">
+	  	<h1 class ="main_title"> Portfol.io</h1>
+	  	<h2 class ="under_title">Stock and Cryptocurrency Trader</h2>
+	  </div>
+	  <div class="login_container">
+		<div class="user_input">
+			<p> Before you get started, please input your desired balance. </p>
+			<input id="balance" type="number" name="balance" placeholder="Desired Balance" required>
+			<button id="initialize" onclick="accountSetup()">Get Started</button>
+			<p style="text-align: center">Already have an account?<a href="login.html"> Sign in</a></p>
+			<div id="error"></div>
+		</div>
+	  </div>
+	
+  </header> 
+		
+	
+	
+</div>
+</body>
+</html>

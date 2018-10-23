@@ -10,16 +10,16 @@
 
 </style>
 </head>
-
+<body>
 <div class="container">
 	<header>
 	  <div class= "top_header">
 	  	<h1 class ="main_title"> Portfol.io</h1>
 	  	<h2 class ="main_title">Stock and Cryptocurrency Trader</h2>
 	  </div>	
-	</header> 
-	<nav class= "navbar" id=>
-		<a href="index.html">Home</a>
+	</header>  
+	<nav class= "navbar">
+		<a href="home.html">Home</a>
 		<div class="dropdown">
 	    	<button class="portfoliobtn">Portfolio 
 	      	<i class="fa fa-caret-down"></i>
@@ -42,8 +42,45 @@
 	</nav>
 
 	<div class="containercrypto">
-		<div class= "crypto_table">
-			<img src="Pictures/CryptoScreenshot.png" width="50%">
+		<div id= "crypto_table_container">
+			<table id="crypto_table">
+			  <tr>
+			    <th>Name</th>
+			    <th>Price Per Coin (USD)</th> 
+			    <th>Crypto Owned</th>
+			    <th>Total Invested (USD)</th>
+			  </tr>
+			  <tr id="row1">
+			    <td></td>
+			    <td></td> 
+			    <td></td>
+			    <td></td>
+			  </tr>
+			  <tr id="row2">
+			    <td></td>
+			    <td></td> 
+			    <td></td>
+			    <td></td>
+			  </tr>
+			  <tr id="row3">
+			    <td></td>
+			    <td></td> 
+			    <td></td>
+			    <td></td>
+			  </tr>
+			  <tr id="row4">
+			    <td></td>
+			    <td></td> 
+			    <td></td>
+			    <td></td>
+			  </tr>
+			  <tr id="row5">
+			    <td></td>
+			    <td></td> 
+			    <td></td>
+			    <td></td>
+			  </tr>
+			</table>
 		</div>
 		<div class= "crypto_graph">
 			<img src="Pictures/fillerCryptoGraph.jpeg" height="300px">
@@ -57,6 +94,6 @@
 		<img src="Pictures/fillerCryptoDetails.png">
 	</div>
 </div>
-
+<script src="crypto_portfolio.js"></script>
 </body>
 </html>

@@ -7,7 +7,6 @@
 <title>Portfol.io</title>
 <link href = "stock_portfolio.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-
 </style>
 </head>
 
@@ -16,12 +15,12 @@
 	  <div class= "top_header">
 	  	<h1 class ="main_title"> Portfol.io</h1>
 	  	<h2 class ="main_title">Stock and Cryptocurrency Trader</h2>
-	  </div>	
-	</header> 
+	  </div>
+	</header>
 	<nav class= "navbar" id=>
-		<a href="index.html">Home</a>
+		<a href="home.html">Home</a>
 		<div class="dropdown">
-	    	<button class="portfoliobtn">Portfolio 
+	    	<button class="portfoliobtn">Portfolio
 	      	<i class="fa fa-caret-down"></i>
 	    	</button>
 	    	<div class="dropdown-content">
@@ -31,7 +30,7 @@
 	    	</div>
 	    </div>
 	    <div class="dropdown">
-	    	<button class="marketbtn">Market 
+	    	<button class="marketbtn">Market
 	      	<i class="fa fa-caret-down"></i>
 	    	</button>
 	    	<div class="dropdown-content">
@@ -43,7 +42,7 @@
 
 	<div class="containerstock">
 		<div class= "stock_table">
-			<img src="Pictures/StockTable.png" width="65%">
+			<div id="stock_table_data"></div>
 		</div>
 		<div class= "stock_graph">
 			<img src="Pictures/fillerStockGraph.png">
@@ -58,6 +57,8 @@
 		<img src="Pictures/fillerStockDetails.png">
 	</div>
 </div>
+
+<script src="StockTable.js"></script>
 
 </body>
 </html>
