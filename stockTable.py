@@ -56,7 +56,7 @@ def writeTable(json,symbols):
 
 
 def main():
-    stockSymbols = ["fb","aapl","ge","tsla","lmt","hear"]
+    stockSymbols = ["fb","aapl","ge","tsla","lmt","hear","goog","amzn"]
     print(createGetRequest(stockSymbols))
     r = requests.get(createGetRequest(stockSymbols))
     r = r.json()
