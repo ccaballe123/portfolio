@@ -187,12 +187,22 @@ table, th, td {
 .trends_header {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Verdana", sans-serif;
 	font-size: 48px;
-	color: aliceblue;
+	color: #000000; /*final will be "aliceblue" */
 	font-style: normal;
 	font-weight: bold;
 	text-align: center;
 	word-spacing: normal;
 	
+}
+
+.trends_header2 {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Verdana", sans-serif;
+	font-size: 18px;
+	color: #000000;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+	word-spacing: normal;
 }
 /*@media screen and (max-width: 740px){
 	.column_left{
