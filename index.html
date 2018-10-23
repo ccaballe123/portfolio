@@ -4,86 +4,59 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name = "viewport" content="width=device-width, initial-scale=1">
-<title>Portfol.io</title>
-<link href = "index_css.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/util.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<!-- <meta name="google-signin-client_id" content="709814920153-9gshc1q9cqvdi5j41gpo7k9s4cdkn4th.apps.googleusercontent.com">
+ --><title>Portfol.io</title>
+<link href = "login_css.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-
 </style>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	firestore.settings(settings);
+  </script>
+<script type = text/javascript src="js/login.js">
+</script>
 </head>
 
+<body>
 <div class="container">
 	<header>
 	  <div class= "top_header">
 	  	<h1 class ="main_title"> Portfol.io</h1>
-	  	<h2 class ="main_title">Stock and Cryptocurrency Trader</h2>
-	  </div>	
-	</header> 
-<nav class= "navbar" id=>
-
-		<a href="index.html">Home</a>
-		<div class="dropdown">
-	    	<button class="portfoliobtn">Portfolio 
-	      	<i class="fa fa-caret-down"></i>
-	    	</button>
-	    	<div class="dropdown-content">
-	    		  <a href="overall_portfolio.html">Overall Portfolio</a>
-	      		<a href="stock_portfolio.html">Stock Portfolio</a>
-	      		<a href="crypto_portfolio.html">Crypto Portfolio</a>
-	    	</div>
-	    </div>
-	    <div class="dropdown">
-	    	<button class="marketbtn">Market 
-	      	<i class="fa fa-caret-down"></i>
-	    	</button>
-	    	<div class="dropdown-content">
-	      		<a href="stock_market.html">Stock Market</a>
-	      		<a href="crypto_market.html">Crypto Market</a>
-	    	</div>
-	    </div>
-</nav>
-	
-<body>
-<div>
-	<div>
-		<header>
-			<h1 class ="trends_header"> Trending On The Markets Now </h1>
-		</header>
-		<div class="column_space">
-			<div class="column_left">
-				<header class = "trends_header2">
-					<h1> Trending Stocks</h1>
-				</header>
-				<div class="table100">
-					<div id="trending_stock"></div>
-				</div>
-				<header class = "trends_header2">
-					<h1> Trending Cryptocurrencies</h1>
-				</header>
-				<div class="wrap-table100">
-					<div class="table100">
-						<div id="trending_crypto"></div>
-					</div>
-				</div>
+	  	<h2 class ="under_title">Stock and Cryptocurrency Trader</h2>
+	  </div>
+	  <div class="login_container">
+		<div class="user_input">
+			<input id="email" type ="text" name="email" placeholder="email">
+			<input id="pwd" type ="password" name="password" placeholder="password">
+			<div id="login_reg">
+				<button id="login_btn" onclick="login()">Login</button>
+				<button id="register_btn" onclick="registerBtn()">Register</button>
 			</div>
-			<div class="column_right">
-				
-					</div>
-				
+			<div id="google_btn_wrapper">
+				<button id="google_btn" onclick="googleLogin()">Sign in with Google</button>
 			</div>
+			<div style="margin-top: 25px" id="error"></p>
 		</div>
-  </div>
+	  </div>
+	
+  </header> 
+	
 </div>
-</div>
-<script src="trending_crypto.js"></script>
-<script src="trending_stock.js"></script>
 
 </body>
-<!--<footer class="footer_header">
-	<h1 class= "footer">Portfol.io</h1>
-	
-</footer>
--->
-</div>
 </html>

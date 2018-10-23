@@ -1,6 +1,6 @@
 
 var xml1 = new XMLHttpRequest();
-xml1.open("GET", "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?sort=percent_change_7d&start=250&limit=5&sort_dir=desc&CMC_PRO_API_KEY=9a4967b9-f9fc-4746-8e65-fd589c08bb59", true);
+xml1.open("GET", "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?sort=percent_change_7d&start=150&limit=5&sort_dir=desc&CMC_PRO_API_KEY=9a4967b9-f9fc-4746-8e65-fd589c08bb59", true);
 
 var tableTxt1 = "";
 xml1.onreadystatechange = function(){

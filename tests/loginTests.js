@@ -26,26 +26,26 @@ describe('Login Tests', function() {
     expect(errorResult).toBe(expected);
   }
 
-  it('should check if the user is redirected to home page after successful login', function() {
-    initializeValues("test@email.com", "testpassword");
-    browser.sleep(1000);
-    expect(browser.getCurrentUrl()).toBe('https://portfolio-47669.firebaseapp.com/home.html');
-  });
+  // it('should check if the user is redirected to home page after successful login', function() {
+  //   initializeValues("test@email.com", "testpassword");
+  //   browser.sleep(1000);
+  //   expect(browser.getCurrentUrl()).toBe('https://portfolio-47669.firebaseapp.com/home.html');
+  // });
 
-  it('should check if the user exists', function() {
-    initializeValues("userDoesNotExist@email.com", "123456");
-    errorTest("There is no user record corresponding to this identifier. The user may have been deleted.");
-  });
+  // it('should check if the user exists', function() {
+  //   initializeValues("userDoesNotExist@email.com", "123456");
+  //   errorTest("There is no user record corresponding to this identifier. The user may have been deleted.");
+  // });
 
-  it('should check if the user\'s password is correct', function() {
-    initializeValues("test@email.com", "invalidPassword");
-    errorTest("The password is invalid or the user does not have a password.");
-  });
+  // it('should check if the user\'s password is correct', function() {
+  //   initializeValues("test@email.com", "invalidPassword");
+  //   errorTest("The password is invalid or the user does not have a password.");
+  // });
 
-  it('should check if the user input a valid email address', function() {
-    initializeValues("INVALID EMAIL", "testpassword");
-    errorTest("The email address is badly formatted.");
-  });
+  // it('should check if the user input a valid email address', function() {
+  //   initializeValues("INVALID EMAIL", "testpassword");
+  //   errorTest("The email address is badly formatted.");
+  // });
 
   it('should check if google login authentication works correctly', function() {
     googleLogin = element(by.id('google_btn'));
