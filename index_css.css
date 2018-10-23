@@ -223,6 +223,7 @@ table, th, td {
 	padding-bottom: 10px;
 	text-align: center;
 	float: left;
+	z-index: -1;
 }
 .column_right{
 	flex: 50%;

@@ -6,6 +6,8 @@
 <meta name = "viewport" content="width=device-width, initial-scale=1">
 <title>Portfol.io</title>
 <link href = "index_css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <style type="text/css">
 
 </style>
@@ -18,14 +20,15 @@
 	  	<h2 class ="main_title">Stock and Cryptocurrency Trader</h2>
 	  </div>	
 	</header> 
-	<nav class= "navbar" id=>
+<nav class= "navbar" id=>
+
 		<a href="home.html">Home</a>
 		<div class="dropdown">
 	    	<button class="portfoliobtn">Portfolio 
 	      	<i class="fa fa-caret-down"></i>
 	    	</button>
 	    	<div class="dropdown-content">
-	    		<a href="overall_portfolio.html">Overall Portfolio</a>
+	    		  <a href="overall_portfolio.html">Overall Portfolio</a>
 	      		<a href="stock_portfolio.html">Stock Portfolio</a>
 	      		<a href="crypto_portfolio.html">Crypto Portfolio</a>
 	    	</div>
@@ -39,33 +42,48 @@
 	      		<a href="crypto_market.html">Crypto Market</a>
 	    	</div>
 	    </div>
-	</nav>
-	<div class="search_bar">
-		<input type="text" placeholder="Search">
-	</div>
-	<div class="search_container">
-		<div class="search_results">
-			<img src="Pictures/StockSearchPictureNew.png">
-		</div>
-		<div class="search_buttons">
-			<table>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-			</table>
-		</div>
-	</div>
+</nav>
 	
+<body>
+<div>
+	<div>
+		<header>
+			<h1 class ="trends_header"> Trending On The Markets Now </h1>
+		</header>
+		<div class="column_space">
+			<div class="column_left">
+				<header class = "trends_header2">
+					<h1> Trending Stocks</h1>
+				</header>
+				<div class="table100">
+					<div id="trending_stock"></div>
+				</div>
+				<header class = "trends_header2">
+					<h1> Trending Cryptocurrencies</h1>
+				</header>
+				<div class="wrap-table100">
+					<div class="table100">
+						<div id="trending_crypto"></div>
+					</div>
+				</div>
+			</div>
+			<div class="column_right">
+				
+					</div>
+				
+			</div>
+		</div>
+  </div>
 </div>
+</div>
+<script src="trending_crypto.js"></script>
+<script src="trending_stock.js"></script>
 
 </body>
+<!--<footer class="footer_header">
+	<h1 class= "footer">Portfol.io</h1>
+	
+</footer>
+-->
+</div>
 </html>

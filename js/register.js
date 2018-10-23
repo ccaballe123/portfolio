@@ -11,10 +11,6 @@ function userInputError(errorMessage) {
 function checkBalanceInput(input) {
 	if(input ? true : false) {
 		console.log(typeof input);
-		if(input.charAt(0) == '0') {
-			userInputError("Please input a correct balance.");
-			return;
-		}
 		if(Number(input) < 0) {
 			userInputError("Please input a balance greater than zero.");
 			return false;
