@@ -1,12 +1,11 @@
 describe('Crypto Portfolio Table Tests', function() {
-  it('check if an html table exists in crypto portfolio page', function() {
+  it('should check if an html table exists in crypto portfolio page', function() {
   	browser.waitForAngularEnabled(false);
     browser.get('https://portfolio-47669.firebaseapp.com/');
 
     var email = element(by.id('email'));
     var pw = element(by.id('pwd'));
     var loginBtn = element(by.id('login_btn'));
-
 
     email.sendKeys('test@email.com');
     pw.sendKeys('testpassword');
