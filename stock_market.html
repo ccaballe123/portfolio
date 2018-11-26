@@ -5,7 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name = "viewport" content="width=device-width, initial-scale=1">
 <title>Portfol.io</title>
+
 <link href = "index_css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+	
 <style type="text/css">
 
 </style>
@@ -40,32 +44,24 @@
 	    	</div>
 	    </div>
 	</nav>
-	<div class="search_bar">
-		<input type="text" placeholder="Search">
+
+	<div class="stock_head">
+		<header class="trends_header">
+			<h1>Stock Market</h1>
+		</header>
 	</div>
 	<div class="search_container">
-		<div class="search_results">
-			<img src="Pictures/StockSearchPictureNew.png">
-		</div>
-		<div class="search_buttons">
-			<table>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-			</table>
+		<div class="searcher">
+			<input type="text" placeholder="Search" id="stock_search">
+			<button id="btn">search</button>
 		</div>
 	</div>
+	<div class="table100">
+		<div id="stock_results"></div>
+	</div>
 	
-</div>
+	
+	<script src="stock_market.js"></script>
 
-</body>
+	</div>
 </html>

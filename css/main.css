@@ -25,6 +25,45 @@ body, html {
 }
 
 /* ------------------------------------ */
+.search_bar {
+	padding-top: 0px;
+}
+
+.search_bar input {
+	font-size: 24px;
+	width: 97%;
+}
+
+.search_container {
+	padding-top: 0px;
+	overflow: hidden;
+}
+
+.search_results {
+	display:inline-block;
+	float: left;
+}
+
+.search_buttons {
+	padding-top: 90px;
+	overflow: hidden;
+}
+
+.search_buttons button {
+	font-family: 'Courier';
+	font-weight:bold;
+	background-color: green;
+	font-size: 20px;
+	height: 85px;
+	width: 85px;
+}
+
+
+.search_results img {
+	width: 1300px;
+}
+
+
 a {
 	margin: 0px;
 	transition: all 0.4s;
@@ -52,7 +91,7 @@ ul, li {
 }
 
 
-/* ------------------------------------ */
+/* ------------------------------------ 
 input {
   display: block;
 	outline: none;
@@ -67,8 +106,8 @@ textarea {
 textarea:focus, input:focus {
   border-color: transparent !important;
 }
-
-/* ------------------------------------ */
+*/
+/* ------------------------------------ 
 button {
 	outline: none !important;
 	border: none;
@@ -85,7 +124,7 @@ iframe {
 
 
 
-
+*/
 /*//////////////////////////////////////////////////////////////////
 [ Utiliti ]*/
 
