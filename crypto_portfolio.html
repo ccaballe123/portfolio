@@ -6,9 +6,7 @@
 <meta name = "viewport" content="width=device-width, initial-scale=1">
 <title>Portfol.io</title>
 <link href = "crypto_portfolio.css" rel="stylesheet" type="text/css">
-<style type="text/css">
 
-</style>
 </head>
 <body>
 <div class="container">
@@ -42,58 +40,17 @@
 	</nav>
 
 	<div class="containercrypto">
-		<div id= "crypto_table_container">
-			<table id="crypto_table">
-			  <tr>
-			    <th>Name</th>
-			    <th>Price Per Coin (USD)</th> 
-			    <th>Crypto Owned</th>
-			    <th>Total Invested (USD)</th>
-			  </tr>
-			  <tr id="row1">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row2">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row3">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row4">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row5">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			</table>
-		</div>
-		<div class= "crypto_graph">
-			<img src="Pictures/fillerCryptoGraph.jpeg" height="300px">
-		</div>
+		<div id= "crypto_table_container"></div>
+		<div id= "crypto_graph"></div>
 	</div>
 	<div class="crypto_options">
 	  	<button class="crypto_options_button"; style="background-color: green">Buy</button>
 	  	<button class="crypto_options_button"; style="background-color: red">Sell</button>
 	</div>
-	<div class= "crypto_details">
-		<img src="Pictures/fillerCryptoDetails.png">
-	</div>
+	<div id= "crypto_details"></div>
 </div>
+
 <script src="crypto_portfolio.js"></script>
+
 </body>
 </html>
