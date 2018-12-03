@@ -1,7 +1,7 @@
   var stockSymbols = ["AAPL","TSLA","LMT","GOOG","AMZN"];
 
   var xml = new XMLHttpRequest();
-  xml.open ("GET","https://api.iextrading.com/1.0/stock/market/batch?symbols=aapl,tsla,lmt,goog,amzn&types=quote&range=1m&last=5", true);
+  xml.open ("GET","https://api.iextrading.com/stock/AAPL/chart", true);
 
   var tableTxt = "";
   var pureTxt = {
