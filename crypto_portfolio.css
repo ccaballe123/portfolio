@@ -240,6 +240,12 @@ a{
 	font-size: 18px;
 }
 
+#new-user {
+	margin-top: 50px;
+	margin-left: 10px;
+	display: none;
+}
+
 #crypto_graph {
 	position: absolute;
 	right: 150px;

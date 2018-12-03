@@ -41,43 +41,60 @@ function displayGraphAndDetailsOnRowClick(){
 	}
 }
 
+function goToMarket() {
+	window.location = "crypto_market.html";
+}
+
 function populateCryptoTable(){
-	var map1 = new Map();
-	var currency = new Map();
-	currency.set("BTC", 1);
-	currency.set("ETH", 13);
-	currency.set("XRP", 2000);
-	currency.set("XLM", 40);
-	currency.set("XMR", 22);
-	map1.set("user1", currency);
+	firebase.auth().onAuthStateChanged(function(user) {
+	if (user && user != null) {
+		var uid = firebase.auth().currentUser.uid;
+		console.log(uid);
+		var docRef = firestore.collection("users").doc("portfolios");
+		docRef.get().then(function(doc) {
+			if(doc.exists) {
+				var obj = (doc.data()[uid]["Crypto"]);
+				currency = new Map(Object.entries(obj));
+				console.log(currency);
+				if(currency.size == 0) {
+					document.getElementById("new-user").style.display = "block";
+					document.getElementById("crypto_table").style.display = "none";
+					return;
+				}
+				var map1 = new Map();
+				map1.set("user1", currency);
 
-	var firstCryptoPortfolio = map1.get("user1");
-	var cryptoString = Array.from(firstCryptoPortfolio.keys()).join();
+				var firstCryptoPortfolio = map1.get("user1");
+				var cryptoString = Array.from(firstCryptoPortfolio.keys()).join();
 
-	//Create xml request and get access crypto api
-	var xml = new XMLHttpRequest();
-	xml.open("GET", "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + cryptoString + "&tsyms=USD", true);
+				//Create xml request and get access crypto api
+				var xml = new XMLHttpRequest();
+				xml.open("GET", "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + cryptoString + "&tsyms=USD", true);
 
-	var tableText = "";
-	//Parse data from api and insert the data into table
-	xml.onreadystatechange = function () {
-		//Ensures api data is ready to be accessed
-		if (xml.readyState === 4 && xml.status === 200) {
-			var jsonData = JSON.parse(xml.responseText);
-			tableText += "<table id=\"crypto_table\"><tr><th>Name</th><th>Price Per Coin (USD)</th><th>Crypto Owned</th><th>Total Invested (USD)</th></tr>"
-		for (var [cryptoID, amountOwned] of firstCryptoPortfolio) {
-			var pricePerCoin = (jsonData.RAW[cryptoID].USD.PRICE).toFixed(2);	
-			var cryptoOwned = amountOwned.toFixed(2);
-			var totalInvested = (amountOwned * jsonData.RAW[cryptoID].USD.PRICE).toFixed(2);
+				var tableText = "";
+				//Parse data from api and insert the data into table
+				xml.onreadystatechange = function () {
+					//Ensures api data is ready to be accessed
+					if (xml.readyState === 4 && xml.status === 200) {
+						var jsonData = JSON.parse(xml.responseText);
+						tableText += "<table id=\"crypto_table\"><tr><th>Name</th><th>Price Per Coin (USD)</th><th>Crypto Owned</th><th>Total Invested (USD)</th></tr>"
+					for (var [cryptoID, amountOwned] of firstCryptoPortfolio) {
+						var pricePerCoin = (jsonData.RAW[cryptoID].USD.PRICE).toFixed(2);	
+						var cryptoOwned = amountOwned.toFixed(2);
+						var totalInvested = (amountOwned * jsonData.RAW[cryptoID].USD.PRICE).toFixed(2);
 
-			tableText += "<tr class=\"coins\"><td>" + cryptoID + "</td><td>" + pricePerCoin + "</td><td>" + cryptoOwned + "</td><td>" + totalInvested + "</td>";
-		}
-		tableText += "</table>";
-      	document.getElementById("crypto_table_container").innerHTML = tableText;
+						tableText += "<tr class=\"coins\"><td>" + cryptoID + "</td><td>" + pricePerCoin + "</td><td>" + cryptoOwned + "</td><td>" + totalInvested + "</td>";
+					}
+					tableText += "</table>";
+			      	document.getElementById("crypto_table_container").innerHTML = tableText;
 
-      	displayGraphAndDetailsOnRowClick();
-	}};
-	xml.send(null);
+			      	displayGraphAndDetailsOnRowClick();
+				}};
+				xml.send(null);
+			} 
+		});
+	} 
+	});
 }
 
 //call function initially, then calls function every 5 minutes
