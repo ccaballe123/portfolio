@@ -1,14 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name = "viewport" content="width=device-width, initial-scale=1">
 <title>Portfol.io</title>
-<link href = "index_css.css" rel="stylesheet" type="text/css">
-<style type="text/css">
 
-</style>
+<link href = "index_css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	const FieldValue = firebase.firestore.FieldValue;
+  	firestore.settings(settings);
+  </script>
 </head>
 
 <div class="container">
@@ -40,32 +61,22 @@
 	    	</div>
 	    </div>
 	</nav>
-	<div class="search_bar">
-		<input type="text" placeholder="Search">
+
+	<div class="stock_head">
+		<header class="trends_header">
+			<h1>Stock Market</h1>
+		</header>
 	</div>
 	<div class="search_container">
-		<div class="search_results">
-			<img src="Pictures/StockSearchPictureNew.png">
-		</div>
-		<div class="search_buttons">
-			<table>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-			</table>
+		<div class="searcher">
+			<input type="text" placeholder="Ex. AAPL" id="stock_search">
+			<button id="btn">search</button>
 		</div>
 	</div>
-	
-</div>
-
-</body>
+	<div class="table100">
+		<div id="stock_results"></div>
+	</div>
+	<script src="js/user_data.js"></script>
+  	<script src="stock_search.js"></script>
+	</div>
 </html>
