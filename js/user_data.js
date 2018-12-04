@@ -1,20 +1,3 @@
-function getBalance() {
-	firebase.auth().onAuthStateChanged(function(user) {
-	if (user && user != null) {
-		var uid = firebase.auth().currentUser.uid;
-		console.log(uid);
-		var docRef = firestore.collection("users").doc("portfolios");
-		docRef.get().then(function(doc) {
-			if(doc.exists) {
-				var balance = (doc.data()[uid]["Balance"]) + "$";
-				document.getElementById("user_balance").value = balance;
-			} 
-		});
-	} 
-	});
-}
-
-
 function buy(currency, row) {
 	if(currency == 0) {
 		currency = "Stock";
@@ -25,10 +8,12 @@ function buy(currency, row) {
 	var symbol = document.getElementsByClassName("symbol")[row].innerHTML;
 	var amount = Number(document.getElementsByClassName("amount")[row].value);
 	var price = document.getElementsByClassName("price")[row].innerHTML;
-	// var uid = "3upnsBR1zeNhKR8OfPGVrYi6pz33";
-	// var symbol = "AAPL";
-	// var amount = 1;
-	// var price = 184.4;
+
+	if(currency == "Crypto") {
+		price = price.replace('$ ','');
+		price = Number(price.replace(',', ''));
+	}
+
 	var docRef = firestore.collection("users").doc("portfolios");
 	docRef.get().then(function(doc) {
 		if(doc.exists) {
@@ -39,7 +24,7 @@ function buy(currency, row) {
 				error.style.display = "block";
 				return;
 			}
-			var newBalance = Number((doc.data()[uid]["Balance"])) - (amount * price);
+			var newBalance = (Number((doc.data()[uid]["Balance"])) - (amount * price));
 			var portfolio = (doc.data()[uid][currency]);
 			if(Object.keys(portfolio).includes(symbol)) {
 				var currentAmount = portfolio[symbol];
@@ -78,6 +63,11 @@ function sell(currency, row) {
 	var symbol = document.getElementsByClassName("symbol")[row].innerHTML;
 	var amount = Number(document.getElementsByClassName("amount")[row].value);
 	var price = document.getElementsByClassName("price")[row].innerHTML;
+
+	if(currency == "Crypto") {
+		price = price.replace('$ ','');
+		price = Number(price.replace(',', ''));
+	}
 
 	var docRef = firestore.collection("users").doc("portfolios");
 	docRef.get().then(function(doc) {
