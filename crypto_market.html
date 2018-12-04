@@ -6,8 +6,31 @@
 <meta name = "viewport" content="width=device-width, initial-scale=1">
 <title>Portfol.io</title>
 <link href = "index_css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <style type="text/css">
 </style>
+
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	const FieldValue = firebase.firestore.FieldValue;
+  	firestore.settings(settings);
+  </script>
 </head>
 
 <div class="container">
@@ -15,12 +38,12 @@
 	  <div class= "top_header">
 	  	<h1 class ="main_title"> Portfol.io</h1>
 	  	<h2 class ="main_title">Stock and Cryptocurrency Trader</h2>
-	  </div>	
-	</header> 
+	  </div>
+	</header>
 	<nav class= "navbar" id=>
 		<a href="home.html">Home</a>
 		<div class="dropdown">
-	    	<button class="portfoliobtn">Portfolio 
+	    	<button class="portfoliobtn">Portfolio
 	      	<i class="fa fa-caret-down"></i>
 	    	</button>
 	    	<div class="dropdown-content">
@@ -30,7 +53,7 @@
 	    	</div>
 	    </div>
 	    <div class="dropdown">
-	    	<button class="marketbtn">Market 
+	    	<button class="marketbtn">Market
 	      	<i class="fa fa-caret-down"></i>
 	    	</button>
 	    	<div class="dropdown-content">
@@ -39,31 +62,23 @@
 	    	</div>
 	    </div>
 	</nav>
-	<div class="search_bar">
-		<input type="text" placeholder="Search">
+	<div class="Crypto_Head">
+		<header class="trends_header">
+			<h1>Crypto Market</h1>
+		</header>
 	</div>
-	<div class="search_container">
-		<div class="search_results">
-			<img src="Pictures/CryptoSearchPictureNew.png">
-		</div>
-		<div class="search_buttons">
-			<table>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-				<tr>
-					<td><button type="button"> + </button></td>
-				</tr>
-			</table>
-		</div>
+<div class ="search_container">
+	<div class="searcher">
+		<input id="crypto_search" type="text" placeholder="Search">
+		<button id="btn">search</button>
 	</div>
-	
+</div>
+  <div id="crypto_results">
+	</div>
+
+
+<script src="crypto_search.js"></script>
+<script src="js/user_data.js"></script>
 </div>
 
 </body>

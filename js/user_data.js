@@ -114,4 +114,6 @@ function sell(currency, row) {
 			});
 		}
 	})
+
 }
+
