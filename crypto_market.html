@@ -10,6 +10,27 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <style type="text/css">
 </style>
+
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	const FieldValue = firebase.firestore.FieldValue;
+  	firestore.settings(settings);
+  </script>
 </head>
 
 <div class="container">
@@ -57,6 +78,7 @@
 
 
 <script src="crypto_search.js"></script>
+<script src="js/user_data.js"></script>
 </div>
 
 </body>

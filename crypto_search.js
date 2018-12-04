@@ -52,7 +52,7 @@ function clicked()
       var price = jsonreply['DISPLAY'][input_val]['USD']['PRICE'];
       var change = jsonreply['DISPLAY'][input_val]['USD']['CHANGE24HOUR'];
       var sym = input_val;
-      injectTxt += "</td><td class=column2><span class='symbol'>" + sym + "</span></td><td class=column2><span class='price'>" + price + "</span></td><td class=column2>" + change + "</td><td class=column2><p>Amount<span class='error'></span></p><input type='number' class='amount'><button id='buy-btn' onclick='buy(0, 0)'>+</button><button id='sell-btn' onclick='sell(0, 0)'>-</button></</td>" + "</tr>";
+      injectTxt += "</td><td class=column2><span class='symbol'>" + sym + "</span></td><td class=column2><span class='price'>" + price + "</span></td><td class=column2>" + change + "</td><td class=column2><p>Amount<span class='error'></span></p><input type='number' class='amount'><button id='buy-btn' onclick='buy(1, 0)'>+</button><button id='sell-btn' onclick='sell(1, 0)'>-</button></</td>" + "</tr>";
       injectTxt += "</tbody></table>"
       document.getElementById("crypto_results").innerHTML = injectTxt;
 		}
