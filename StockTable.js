@@ -1,17 +1,20 @@
+var vals = []
+
 function displayGraphAndDetailsOnRowClick(values){
+
   var numRows = document.getElementsByClassName("stocks").length;
   var i;
   for(i = 0; i < numRows; i++){
-    document.getElementsByClassName("stocks")[i].onclick = function() { 
+    vals.push(values[i]);
+    document.getElementsByClassName("stocks")[i].onclick = function() {
       document.getElementById("stock_graph").innerHTML = '';
-      // document.getElementById("crypto_details").innerHTML = '';
-      // console.log(document.getElementsByClassName("stocks")[i].innerHTML);
-      displayStockGraph(values[i]); 
+      displayStockGraph(this);
      };
   }
 }
 
-function displayStockGraph(symbol) {
+function displayStockGraph(symbols) {
+  var symbol = symbols.cells[1].textContent;
   var xml = new XMLHttpRequest();
   xml.open('GET', "https://api.iextrading.com/1.0/stock/" + symbol + "/chart/1d", false);
   xml.send();
@@ -85,7 +88,6 @@ function populateStockTable() {
   firebase.auth().onAuthStateChanged(function(user) {
   if (user && user != null) {
     var uid = firebase.auth().currentUser.uid;
-    console.log(uid);
     var docRef = firestore.collection("users").doc("portfolios");
     docRef.get().then(function(doc) {
       if(doc.exists) {
@@ -100,7 +102,7 @@ function populateStockTable() {
 
   var firstStockPortfolio = map1.get("user1");
   var stockString = Array.from(firstStockPortfolio.keys()).join();
-  
+
   var xml = new XMLHttpRequest();
   xml.open ("GET","https://api.iextrading.com/1.0/stock/market/batch?symbols="+stockString+"&types=quote&range=1m&last=5", true);
 
@@ -111,7 +113,7 @@ function populateStockTable() {
     {
       var jsonObj = JSON.parse(xml.responseText);
       tableTxt += "<table><thead><tr class=table100-head><th class=column1>Company Name</th><th class=column2>Symbol</th><th class=column3>Price</th><th class=column6>Stock Owned</th><th class=column6>Total Invested</th></tr></thead><tbody>";
-      for (var [stockID, amountOwned] of firstStockPortfolio) 
+      for (var [stockID, amountOwned] of firstStockPortfolio)
       {
         var name          = jsonObj[stockID]["quote"]["companyName"];
         var price         = jsonObj[stockID]["quote"]["latestPrice"].toFixed(2);
@@ -135,5 +137,5 @@ function populateStockTable() {
 
 
 populateStockTable();
-displayStockGraph("AAPL");
+displayStockGraph("aapl");
 setInterval(populateStockTable, 300000);

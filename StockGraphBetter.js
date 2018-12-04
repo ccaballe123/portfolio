@@ -1,10 +1,10 @@
-var stocks = ["AAPL","TSLA","LMT","GOOG","AMZN"];
+var stocks = "AAPL";
 
 // var xml = new XMLHttpRequest();
 // xml.open ("GET","https://api.iextrading.com/1.0/stock/aapl/chart/1d", true);
 
 var xml = new XMLHttpRequest();
-xml.open('GET', "https://api.iextrading.com/1.0/stock/aapl/chart/1d", false);
+xml.open('GET', "https://api.iextrading.com/1.0/stock/"+stocks+"/chart/1d", false);
 xml.send();
 
 var jsonObj = JSON.parse(xml.responseText);
