@@ -8,6 +8,25 @@
 <link href = "stock_portfolio.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 </style>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	firestore.settings(settings);
+  </script>
 </head>
 
 <div class="container">
@@ -44,18 +63,21 @@
 		<div class= "stock_table">
 			<div id="stock_table_data"></div>
 		</div>
-		<div class= "stock_graph">
-			<img src="Pictures/fillerStockGraph.png">
-		</div>
+	</div>
+  
+	<canvas id="myChart" width="400" height="400"></canvas>
+	<script src="Chart.bundle.js"></script>
+	<div id= "stock_graph">
+		<!-- <script src="StockGraphBetter.js"></script> -->
 	</div>
 
-	<div class="stock_options">
+	<!-- <div class="stock_options">
 	  <button class="stock_options_button"; style="background-color: green">Buy</button>
 	  <button class="stock_options_button"; style="background-color: red">Sell</button>
-	</div>
-	<div class= "stock_details">
+	</div> -->
+<!-- 	<div class= "stock_details">
 		<img src="Pictures/fillerStockDetails.png">
-	</div>
+	</div> -->
 </div>
 
 <script src="StockTable.js"></script>
