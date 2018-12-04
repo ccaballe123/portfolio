@@ -51,19 +51,19 @@ function displayStockGraph(symbols) {
             // }
           ]},
         options: {
-          responsive: true,
+          // responsive: true,
           title: {
             display: true,
             text: 'Stock Price(at closing)'
           },
-          tooltips: {
-            mode: 'index',
-            intersect: false,
-          },
-          hover: {
-            mode: 'nearest',
-            intersect: true
-          },
+          // tooltips: {
+          //   mode: 'index',
+          //   intersect: false,
+          // },
+          // hover: {
+          //   mode: 'nearest',
+          //   intersect: true
+          // },
           scales: {
             xAxes: [{
               display: true,
