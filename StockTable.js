@@ -29,8 +29,11 @@ function displayStockGraph(symbols) {
       }
 
 
+    if (this.myLineChart) this.myLineChart.destroy();
+
     var ctx = document.getElementById("myChart").getContext('2d');
-    var myLineChart = new Chart(ctx, {
+
+    this.myLineChart = new Chart(ctx, {
         type: 'line',
         data:{
         //Along the x-axis
@@ -51,19 +54,19 @@ function displayStockGraph(symbols) {
             // }
           ]},
         options: {
-          // responsive: true,
+          responsive: true,
           title: {
             display: true,
             text: 'Stock Price(at closing)'
           },
-          // tooltips: {
-          //   mode: 'index',
-          //   intersect: false,
-          // },
-          // hover: {
-          //   mode: 'nearest',
-          //   intersect: true
-          // },
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+          },
+          hover: {
+            mode: 'nearest',
+            intersect: true
+          },
           scales: {
             xAxes: [{
               display: true,
