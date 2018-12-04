@@ -6,9 +6,27 @@
 <meta name = "viewport" content="width=device-width, initial-scale=1">
 <title>Portfol.io</title>
 <link href = "crypto_portfolio.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-
-</style>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6t7ZLH7RSm5bWS-IAGMFDsF8lSoDRmKs",
+    authDomain: "portfolio-47669.firebaseapp.com",
+    databaseURL: "https://portfolio-47669.firebaseio.com",
+    projectId: "portfolio-47669",
+    storageBucket: "portfolio-47669.appspot.com",
+    messagingSenderId: "709814920153"
+  };
+  firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+  	const settings = { timestampsInSnapshots: true };
+  	// const FieldValue = firestore.FieldValue;
+  	firestore.settings(settings);
+  </script>
+</script>
+<script src="crypto_portfolio.js"></script>
 </head>
 <body>
 <div class="container">
@@ -42,58 +60,18 @@
 	</nav>
 
 	<div class="containercrypto">
-		<div id= "crypto_table_container">
-			<table id="crypto_table">
-			  <tr>
-			    <th>Name</th>
-			    <th>Price Per Coin (USD)</th> 
-			    <th>Crypto Owned</th>
-			    <th>Total Invested (USD)</th>
-			  </tr>
-			  <tr id="row1">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row2">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row3">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row4">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			  <tr id="row5">
-			    <td></td>
-			    <td></td> 
-			    <td></td>
-			    <td></td>
-			  </tr>
-			</table>
-		</div>
-		<div class= "crypto_graph">
-			<img src="Pictures/fillerCryptoGraph.jpeg" height="300px">
-		</div>
+		<div id= "crypto_table_container"></div>
+		<div id= "crypto_graph"></div>
+		<div id= "new-user">Your portfolio is empty! Click <a href="#" style="color: blue" onclick="goToMarket()"> here</a> to buy some cryptocurrencies. </div>
 	</div>
 	<div class="crypto_options">
-	  	<button class="crypto_options_button"; style="background-color: green">Buy</button>
-	  	<button class="crypto_options_button"; style="background-color: red">Sell</button>
+	  	<!-- <button class="crypto_options_button"; style="background-color: green">Buy</button>
+	  	<button class="crypto_options_button"; style="background-color: red">Sell</button> -->
 	</div>
-	<div class= "crypto_details">
-		<img src="Pictures/fillerCryptoDetails.png">
-	</div>
+	<div id= "crypto_details"></div>
 </div>
-<script src="crypto_portfolio.js"></script>
+
+<!-- <script src="crypto_portfolio.js"></script> -->
+
 </body>
 </html>
