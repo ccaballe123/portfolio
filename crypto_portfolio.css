@@ -240,10 +240,18 @@ a{
 	font-size: 18px;
 }
 
-.crypto_graph {
+#new-user {
+	margin-top: 50px;
+	margin-left: 10px;
+	display: none;
+}
+
+#crypto_graph {
 	position: absolute;
 	right: 150px;
 	padding-top: 50px;
+	padding-right: 20px;
+	
 }
 
 .crypto_options {
@@ -258,8 +266,8 @@ a{
 	border: none;
 }
 
-.crypto_details {
+#crypto_details {
 	position: absolute;
-	right: 550px;
+	right: 600px;
 	padding-top: 450px;
 }

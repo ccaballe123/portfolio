@@ -25,6 +25,45 @@ body, html {
 }
 
 /* ------------------------------------ */
+.search_bar {
+	padding-top: 0px;
+}
+
+.search_bar input {
+	font-size: 24px;
+	width: 97%;
+}
+
+.search_container {
+	padding-top: 0px;
+	overflow: hidden;
+}
+
+.search_results {
+	display:inline-block;
+	float: left;
+}
+
+.search_buttons {
+	padding-top: 90px;
+	overflow: hidden;
+}
+
+.search_buttons button {
+	font-family: 'Courier';
+	font-weight:bold;
+	background-color: green;
+	font-size: 20px;
+	height: 85px;
+	width: 85px;
+}
+
+
+.search_results img {
+	width: 1300px;
+}
+
+
 a {
 	margin: 0px;
 	transition: all 0.4s;
@@ -52,14 +91,42 @@ ul, li {
 }
 
 
-/* ------------------------------------ */
+
+/* ------------------------------------ 
+input {
+  display: block;
+	outline: none;
+	border: none !important;
+}
+
+textarea {
+  display: block;
+  outline: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+*/
+/* ------------------------------------ 
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
 
 
-/* ------------------------------------ */
 
 
-
-
+*/
 /*//////////////////////////////////////////////////////////////////
 [ Utiliti ]*/
 
@@ -153,6 +220,11 @@ tbody tr:nth-child(even) {
   background-color: #f5f5f5;
 }
 
+.error {
+  color: red !important;
+  font-weight: bold;
+}
+
 tbody tr {
   font-family: OpenSans-Regular;
   font-size: 15px;
@@ -199,6 +271,25 @@ tbody tr:hover {
   /*padding-right: 62px; */
 }
 
+#buy-btn {
+  background-color: green;
+  width: 24px;
+  height: 24px;
+}
+
+#sell-btn {
+  background-color: red;
+  width: 24px;
+  height: 24px;
+
+#buy-sell-input {
+  font-size: 24px;
+}
+
+/*#error {
+  color: red !important;
+  font-weight: bold;
+}*/
 
 /*@media screen and (max-width: 992px) {
   table {
